@@ -1,20 +1,18 @@
-set runtimepath+=/home/mariomm/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
+" Specify a directory for plugins
+call plug#begin('~/.local/share/nvim/plugged')
 
-if dein#load_state(expand('/home/mariomm/.config/nvim/bundle/'))
-    call dein#begin(expand('/home/mariomm/.config/nvim/bundle/'))
-    call dein#add('beyondmarc/glsl.vim')
-    call dein#add('liuchengxu/space-vim-dark')
-    call dein#add('Marfisc/vorange')
-    call dein#add('neomake/neomake')
-    call dein#add('scrooloose/nerdcommenter')
-    call dein#add('Shougo/dein.vim')
-    call dein#add('Shougo/deoplete.nvim')
-    call dein#add('Shougo/neosnippet')
-    call dein#add('Shougo/neosnippet-snippets')
-    call dein#add('vim-airline/vim-airline')
-    call dein#end()
-    call dein#save_state()
-endif
+Plug 'beyondmarc/glsl.vim'
+Plug 'liuchengxu/space-vim-dark'
+Plug 'Marfisc/vorange'
+Plug 'neomake/neomake'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'vim-airline/vim-airline'
+
+" Initialize plugin system
+call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Display settings
