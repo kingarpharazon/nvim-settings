@@ -71,6 +71,4 @@ xmap <C-k>  <Plug>(neosnippet_expand_or_jump)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Neomake
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:neomake_cpp_enabled_makers=['clang']
-let g:neomake_cpp_clang_args=["-std=c++14", "-Iinclude"]
 autocmd! BufWritePost * Neomake
