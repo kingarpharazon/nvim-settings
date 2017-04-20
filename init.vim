@@ -10,6 +10,7 @@ Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'vim-airline/vim-airline'
+Plug 'zchee/deoplete-jedi'
 
 " Initialize plugin system
 call plug#end()
@@ -71,5 +72,5 @@ xmap <C-k>  <Plug>(neosnippet_expand_or_jump)
 " => Neomake
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:neomake_cpp_enabled_makers=['clang']
-let g:neomake_cpp_clang_args=["-std=c++14"]
+let g:neomake_cpp_clang_args=["-std=c++14", "-Iinclude"]
 autocmd! BufWritePost * Neomake
