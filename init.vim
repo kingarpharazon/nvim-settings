@@ -24,7 +24,6 @@ set showmode                " show mode in status bar
 set showcmd                 " show typed command in status bar
 set ruler                   " show cursor posiiton in status bar
 set title                   " show file title in title bar
-set colorcolumn=80          " show a marging at column 80
 colorscheme vorange
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -50,10 +49,13 @@ set splitright              " open vertical splits to the right
 " => Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap jj <Esc>
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <C-h> <C-w>h
+map <Leader>y "+y
+map <Leader>p "+p
+nnoremap <Leader>cw :cd %:p:h<CR>:pwd<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Deoplete
