@@ -3,6 +3,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'beyondmarc/glsl.vim'
 Plug 'liuchengxu/space-vim-dark'
+Plug 'majutsushi/tagbar'
 Plug 'Marfisc/vorange'
 Plug 'neomake/neomake'
 Plug 'scrooloose/nerdcommenter'
@@ -74,3 +75,8 @@ xmap <C-k>  <Plug>(neosnippet_expand_or_jump)
 " => Neomake
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd! BufWritePost * Neomake
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Tagbar 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <Leader> :TagbarToggle<CR>
