@@ -26,7 +26,8 @@ set showcmd                 " show typed command in status bar
 set ruler                   " show cursor posiiton in status bar
 set title                   " show file title in title bar
 set termguicolors           " use true colors in terminal
-colorscheme vorange
+colorscheme space-vim-dark
+let g:airline_theme='violet'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editor settings
@@ -78,6 +79,6 @@ xmap <C-k>  <Plug>(neosnippet_expand_or_jump)
 autocmd! BufWritePost * Neomake
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Tagbar 
+" => Tagbar
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <Leader> :TagbarToggle<CR>
