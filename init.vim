@@ -2,6 +2,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'beyondmarc/glsl.vim'
+Plug 'chriskempson/base16-vim'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'majutsushi/tagbar'
 Plug 'Marfisc/vorange'
@@ -11,6 +12,7 @@ Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'zchee/deoplete-jedi'
 
 " Initialize plugin system
@@ -26,8 +28,7 @@ set showcmd                 " show typed command in status bar
 set ruler                   " show cursor posiiton in status bar
 set title                   " show file title in title bar
 set termguicolors           " use true colors in terminal
-colorscheme space-vim-dark
-let g:airline_theme='violet'
+colorscheme base16-nord
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editor settings
