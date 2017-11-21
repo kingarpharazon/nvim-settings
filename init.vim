@@ -7,8 +7,9 @@ Plug 'liuchengxu/space-vim-dark'
 Plug 'majutsushi/tagbar'
 Plug 'Marfisc/vorange'
 Plug 'neomake/neomake'
+Plug 'roxma/nvim-completion-manager'
+Plug 'roxma/ncm-clang'
 Plug 'scrooloose/nerdcommenter'
-Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'vim-airline/vim-airline'
@@ -64,7 +65,7 @@ nnoremap <Leader>cw :cd %:p:h<CR>:pwd<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Deoplete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call deoplete#enable()      " enable at startup
+"call deoplete#enable()      " enable at startup
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
