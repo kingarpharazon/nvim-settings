@@ -7,10 +7,14 @@ Plug 'liuchengxu/space-vim-dark'
 Plug 'machakann/vim-sandwich'
 Plug 'majutsushi/tagbar'
 Plug 'Marfisc/vorange'
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-neosnippet'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-pyclang'
+Plug 'roxma/nvim-yarp'
 Plug 'neomake/neomake'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'roxma/nvim-completion-manager'
-Plug 'roxma/ncm-clang'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
@@ -30,7 +34,7 @@ set showcmd                 " show typed command in status bar
 set ruler                   " show cursor posiiton in status bar
 set title                   " show file title in title bar
 set termguicolors           " use true colors in terminal
-colorscheme base16-nord
+colorscheme base16-dracula
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editor settings
@@ -64,10 +68,13 @@ map <Leader>p "+p
 nnoremap <Leader>cw :cd %:p:h<CR>:pwd<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Deoplete
+" => Completion
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"call deoplete#enable()      " enable at startup
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+"let g:ncm2_pyclang#library_path = 'C:/Program Files/LLVM/lib/'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Neosnippet settings
