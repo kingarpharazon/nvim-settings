@@ -11,9 +11,11 @@ Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-neosnippet'
 Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-pyclang'
+Plug 'ncm2/ncm2-vim-lsp'
 Plug 'roxma/nvim-yarp'
 Plug 'neomake/neomake'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neosnippet'
@@ -74,7 +76,13 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
-"let g:ncm2_pyclang#library_path = 'C:/Program Files/LLVM/lib/'
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd', '-background-index']},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+        \ })
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Neosnippet settings
