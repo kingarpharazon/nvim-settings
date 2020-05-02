@@ -3,6 +3,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'beyondmarc/glsl.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'dense-analysis/ale'
+Plug 'mattn/emmet-vim'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'machakann/vim-sandwich'
 Plug 'majutsushi/tagbar'
@@ -13,10 +15,11 @@ Plug 'ncm2/ncm2-neosnippet'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-vim-lsp'
 Plug 'roxma/nvim-yarp'
-Plug 'neomake/neomake'
+"Plug 'neomake/neomake'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'Omnisharp/omnisharp-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
@@ -55,6 +58,7 @@ filetype plugin indent on   " enable plugins
 
 set splitbelow              " open horizonatal splits below
 set splitright              " open vertical splits to the right
+set clipboard^=unnamed,unnamedplus
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -79,10 +83,12 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 if executable('clangd')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'clangd',
-        \ 'cmd': {server_info->['clangd', '-background-index']},
+        \ 'cmd': {server_info->['clangd']},
         \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
         \ })
 endif
+
+let g:Omnisharp_highlight_types = 2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Neosnippet settings
@@ -92,11 +98,25 @@ smap <C-k>  <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>  <Plug>(neosnippet_expand_or_jump)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Neomake
+" => ALE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd! BufWritePost * Neomake
+let g:ale_linters = {
+\ 'cs': ['OmniSharp']
+\}
+
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tagbar
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <Leader> :TagbarToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Emmet
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
