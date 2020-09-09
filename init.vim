@@ -3,12 +3,14 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'beyondmarc/glsl.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'dracula/vim', {'as':'dracula'}
 Plug 'dense-analysis/ale'
 Plug 'mattn/emmet-vim'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'machakann/vim-sandwich'
 Plug 'majutsushi/tagbar'
 Plug 'Marfisc/vorange'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-neosnippet'
@@ -39,7 +41,7 @@ set showcmd                 " show typed command in status bar
 set ruler                   " show cursor posiiton in status bar
 set title                   " show file title in title bar
 set termguicolors           " use true colors in terminal
-colorscheme base16-dracula
+colorscheme dracula
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editor settings
@@ -98,17 +100,31 @@ smap <C-k>  <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>  <Plug>(neosnippet_expand_or_jump)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Airline 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:airline_powerline_fonts = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ALE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
-\ 'cs': ['OmniSharp']
+\ 'cs': ['OmniSharp'],
+\ 'cpp': ['clazy']
 \}
 
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
 
+" Change the symbols ALE uses
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+
+" Run linteres only when saving a file
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_insert_leave = 0
+" let g:ale_lint_on_enter = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tagbar
