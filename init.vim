@@ -99,7 +99,7 @@ smap <C-k>  <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>  <Plug>(neosnippet_expand_or_jump)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Airline 
+" => Airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:airline_powerline_fonts = 1
 
