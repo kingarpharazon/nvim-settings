@@ -1,6 +1,7 @@
 " Specify a directory for plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'arcticicestudio/nord-vim'
 Plug 'beyondmarc/glsl.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim', {'as':'dracula'}
