@@ -11,7 +11,6 @@ Plug 'liuchengxu/space-vim-dark'
 Plug 'machakann/vim-sandwich'
 Plug 'majutsushi/tagbar'
 Plug 'Marfisc/vorange'
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-neosnippet'
