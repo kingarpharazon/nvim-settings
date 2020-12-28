@@ -42,7 +42,7 @@ set showcmd                 " show typed command in status bar
 set ruler                   " show cursor posiiton in status bar
 set title                   " show file title in title bar
 set termguicolors           " use true colors in terminal
-colorscheme dracula
+colorscheme nord
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editor settings
@@ -110,7 +110,7 @@ xmap <C-k>  <Plug>(neosnippet_expand_or_jump)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
 \ 'cs': ['OmniSharp'],
-\ 'cpp': ['clazy']
+\ 'cpp': ['clangd']
 \}
 
 " Set this. Airline will handle the rest.
