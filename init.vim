@@ -127,6 +127,19 @@ highlight clear ALEWarningSign
 " let g:ale_lint_on_insert_leave = 0
 " let g:ale_lint_on_enter = 0
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vimwiki settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("win32") || has("win16")
+    let g:vimwiki_list = [
+                \{'path': 'D:/Dropbox/TODO/personal.wiki'}
+                \]
+else
+    let g:vimwiki_list = [
+                \{'path': '~/Dropbox/TODO/personal.wiki'}
+                \]
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tagbar
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
