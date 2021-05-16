@@ -1,6 +1,7 @@
 " Specify a directory for plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'beyondmarc/glsl.vim'
 Plug 'chriskempson/base16-vim'
@@ -155,3 +156,10 @@ autocmd FileType html,css EmmetInstall
 " => vim-lion
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let b:lion_squeeze_spaces = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => gitgutter
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set updatetime=250
+nmap <Leader>gn <Plug>(GitGutterNextHunk)
+nmap <Leader>gN <Plug>(GitGutterPrevHunk)
