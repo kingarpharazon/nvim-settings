@@ -43,7 +43,7 @@ set showcmd                 " show typed command in status bar
 set ruler                   " show cursor posiiton in status bar
 set title                   " show file title in title bar
 set termguicolors           " use true colors in terminal
-colorscheme nord
+colorscheme dracula
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editor settings
